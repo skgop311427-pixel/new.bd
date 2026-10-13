@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthStore — Natural Wellness, Honestly Sourced</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WFP2PC7W');</script>
+<!-- End Google Tag Manager -->
+<style>
+  :root{
+    --cream:#F6F2E9;
+    --paper:#FBF9F4;
+    --forest:#183C2E;
+    --forest-deep:#0F2A20;
+    --terracotta:#C1683B;
+    --gold:#B78B3F;
+    --ink:#1C231E;
+    --line:#D8CFBD;
+    --sage:#8BA187;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  button{ font-family:inherit; cursor:pointer; border:none; }
+
+  /* ===== Botanical divider ===== */
+  .sprig{
+    display:flex; align-items:center; gap:10px;
+    color:var(--sage);
+  }
+  .sprig::before, .sprig::after{
+    content:""; flex:1; height:1px; background:var(--line);
+  }
+  .sprig svg{ width:18px; height:18px; flex-shrink:0; }
+
+  /* ===== Top utility bar ===== */
+  .util-bar{
+    background:var(--forest-deep);
+    color:var(--cream);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-align:center;
+    padding:8px 16px;
+    text-transform:uppercase;
+  }
+  .util-bar span{ color:var(--gold); }
+
+  /* ===== Header ===== */
+  header{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:50;
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px; max-width:1180px; margin:0 auto; gap:24px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:700; font-size:24px; color:var(--forest);
+  }
+  .logo .mark{
+    width:34px; height:34px; border-radius:50%;
+    background:var(--forest); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px;
+  }
+  .search{
+    flex:1; max-width:420px;
+    display:flex; align-items:center;
+    border:1px solid var(--line); background:var(--cream);
+    border-radius:var(--radius);
+    padding:0 14px;
+  }
+  .search input{
+    border:none; background:transparent; outline:none;
+    padding:11px 8px; width:100%;
+    font-family:'Work Sans'; font-size:14px; color:var(--ink);
+  }
+  .search svg{ width:16px; height:16px; color:var(--forest); flex-shrink:0; }
+  nav.icons{ display:flex; align-items:center; gap:22px; }
+  .icon-btn{ position:relative; display:flex; align-items:center; justify-content:center; }
+  .icon-btn svg{ width:20px; height:20px; color:var(--forest); }
+  .badge{
+    position:absolute; top:-6px; right:-8px;
+    background:var(--terracotta); color:#fff;
+    font-size:9px; font-family:'IBM Plex Mono';
+    width:15px; height:15px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .account{ display:flex; align-items:center; gap:8px; }
+  .account .av{ width:32px; height:32px; border-radius:50%; background:var(--sage); }
+  .account span{ font-size:13px; font-weight:600; }
+
+  /* ===== Hero ===== */
+  .hero{
+    background:var(--forest);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1180px; margin:0 auto; padding:76px 32px 88px;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;
+    position:relative; z-index:2;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); }
+  .hero h1{
+    font-size:56px; line-height:1.04; color:var(--cream);
+    max-width:520px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold); font-weight:500; }
+  .hero p{
+    margin-top:22px; font-size:16px; line-height:1.6;
+    max-width:420px; color:#D9E0D6;
+  }
+  .cta-row{ margin-top:34px; display:flex; align-items:center; gap:20px; }
+  .btn-primary{
+    background:var(--terracotta); color:#fff;
+    padding:15px 30px; font-size:14px; font-weight:600;
+    letter-spacing:0.02em; border-radius:var(--radius);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary:hover{ background:#A85B31; transform:translateY(-1px); }
+  .cta-note{ font-family:'IBM Plex Mono'; font-size:12px; color:#A9B8A3; }
+
+  .hero-card{
+    background:var(--forest-deep);
+    border:1px solid #2A4C3B;
+    border-radius:var(--radius);
+    padding:28px;
+    position:relative;
+  }
+  .hero-card .tag{
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--gold);
+    text-transform:uppercase; letter-spacing:0.1em;
+    border-bottom:1px solid #2A4C3B; padding-bottom:14px; margin-bottom:18px;
+    display:flex; justify-content:space-between;
+  }
+  .lab-list{ display:flex; flex-direction:column; gap:14px; }
+  .lab-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:13px; color:#C9D3C4; border-bottom:1px dashed #274236; padding-bottom:10px;}
+  .lab-row b{ color:var(--cream); font-weight:600; font-family:'Fraunces'; font-size:15px; }
+  .hero-quote{
+    margin-top:18px; font-size:12px; color:#93A28D; font-style:italic; line-height:1.5;
+  }
+
+  /* ===== Trust strip ===== */
+  .trust{
+    background:var(--paper); border-bottom:1px solid var(--line);
+  }
+  .trust-inner{
+    max-width:1180px; margin:0 auto; padding:26px 32px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
+  }
+  .trust-item{ display:flex; align-items:center; gap:12px; }
+  .trust-item svg{ width:22px; height:22px; color:var(--terracotta); flex-shrink:0; }
+  .trust-item div{ font-size:13px; }
+  .trust-item b{ display:block; font-size:13px; font-weight:600; }
+  .trust-item span{ color:#6B6355; font-size:12px; }
+
+  /* ===== Section shell ===== */
+  section.block{ padding:74px 0; }
+  .block-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:38px; gap:20px; flex-wrap:wrap;
+  }
+  .block-head .eyebrow{ color:var(--terracotta); }
+  .block-head h2{ font-size:34px; color:var(--forest); }
+  .block-head .view-all{
+    font-family:'IBM Plex Mono'; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.08em; border-bottom:1px solid var(--forest); padding-bottom:3px;
+  }
+
+  /* ===== Categories ===== */
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+  }
+  .cat-card{
+    background:var(--paper); border:1px solid var(--line);
+    padding:30px 22px; text-align:center;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .cat-card:hover{ border-color:var(--terracotta); transform:translateY(-3px); }
+  .cat-card .num{ font-family:'IBM Plex Mono'; font-size:11px; color:var(--sage); margin-bottom:16px; display:block; }
+  .cat-icon{
+    width:52px; height:52px; margin:0 auto 18px; border-radius:50%;
+    background:var(--cream); display:flex; align-items:center; justify-content:center;
+  }
+  .cat-icon svg{ width:24px; height:24px; color:var(--forest); }
+  .cat-card h3{ font-size:16px; font-weight:600; color:var(--ink); font-family:'Work Sans'; }
+  .cat-card p{ font-size:12px; color:#8A8172; margin-top:6px; }
+
+  /* ===== Best sellers ===== */
+  .prod-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+  }
+  .prod-card{
+    background:var(--paper); border:1px solid var(--line);
+    display:flex; flex-direction:column;
+  }
+  .prod-thumb{
+    aspect-ratio:1/1; background:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .prod-thumb .ribbon{
+    position:absolute; top:12px; left:12px;
+    background:var(--forest); color:var(--cream);
+    font-family:'IBM Plex Mono'; font-size:10px; text-transform:uppercase;
+    padding:4px 8px; letter-spacing:0.06em;
+  }
+  .prod-thumb svg{ width:64px; height:64px; color:var(--forest); opacity:0.85; }
+  .prod-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .prod-body .sku{ font-family:'IBM Plex Mono'; font-size:10px; color:#9B927F; letter-spacing:0.06em; }
+  .prod-body h3{ font-size:16px; font-family:'Fraunces'; font-weight:600; color:var(--ink); }
+  .prod-body .stars{ font-size:11px; color:var(--gold); letter-spacing:2px; }
+  .price-row{ display:flex; align-items:baseline; gap:8px; margin-top:auto; }
+  .price{ font-family:'IBM Plex Mono'; font-size:17px; font-weight:500; color:var(--forest); }
+  .price-old{ font-family:'IBM Plex Mono'; font-size:12px; color:#B0A791; text-decoration:line-through; }
+  .btn-add{
+    margin-top:8px; width:100%; background:transparent;
+    border:1px solid var(--forest); color:var(--forest);
+    padding:11px; font-size:12px; font-weight:600; letter-spacing:0.06em;
+    text-transform:uppercase; transition:all .15s ease;
+  }
+  .btn-add:hover{ background:var(--forest); color:var(--cream); }
+
+  /* ===== Offer + Reviews split ===== */
+  .split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; }
+  .offer-card{
+    background:var(--forest); color:var(--cream);
+    padding:44px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .offer-card .eyebrow{ color:var(--gold); }
+  .offer-card h3{ font-size:30px; margin-top:14px; max-width:340px; line-height:1.15; }
+  .offer-card p{ font-size:14px; color:#C9D3C4; margin-top:14px; max-width:320px; }
+  .offer-card .btn-primary{ margin-top:26px; width:fit-content; }
+
+  .side-stack{ display:flex; flex-direction:column; gap:24px; }
+  .review-card, .tips-card{
+    background:var(--paper); border:1px solid var(--line); padding:28px;
+  }
+  .review-card h4, .tips-card h4{
+    font-family:'Fraunces'; font-size:18px; font-weight:600; margin-bottom:16px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .review-stars{ color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:10px; }
+  .review-card p{ font-size:13px; color:#6B6355; line-height:1.6; }
+  .review-who{ margin-top:14px; font-family:'IBM Plex Mono'; font-size:11px; color:#9B927F; }
+  .tips-list{ display:flex; flex-direction:column; }
+  .tip-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:13px 0; border-bottom:1px dashed var(--line); font-size:13px;
+  }
+  .tip-row:last-child{ border-bottom:none; }
+  .tip-row .n{ font-family:'IBM Plex Mono'; color:var(--terracotta); margin-right:10px; }
+
+  /* ===== Footer ===== */
+  footer{ background:var(--forest-deep); color:#C9D3C4; padding:64px 0 28px; }
+  .foot-grid{
+    display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:40px;
+    padding-bottom:44px; border-bottom:1px solid #24402F;
+  }
+  .foot-brand .logo{ color:var(--cream); }
+  .foot-brand p{ font-size:13px; margin-top:16px; color:#93A28D; line-height:1.6; max-width:280px; }
+  footer h5{
+    font-family:'IBM Plex Mono'; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--gold); margin-bottom:18px;
+  }
+  footer ul{ list-style:none; display:flex; flex-direction:column; gap:11px; }
+  footer ul a{ font-size:13px; color:#C9D3C4; }
+  footer ul a:hover{ color:var(--cream); }
+  .foot-bottom{
+    padding-top:24px; display:flex; justify-content:space-between;
+    font-family:'IBM Plex Mono'; font-size:11px; color:#6E8073; flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width: 880px){
+    .header-inner{ flex-wrap:wrap; }
+    .search{ order:3; max-width:100%; }
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero h1{ font-size:38px; }
+    .cat-grid, .prod-grid{ grid-template-columns:repeat(2,1fr); }
+    .split{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFP2PC7W"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="util-bar">Free shipping over $45 &nbsp;·&nbsp; <span>25% off supplements</span> this week &nbsp;·&nbsp; Third-party lab tested</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo"><span class="mark">H</span>HealthStore</a>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" placeholder="Search vitamins, herbs, protein…">
+    </div>
+    <nav class="icons">
+      <a class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></a>
+      <a class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="badge">3</span></a>
+      <a class="account"><span class="av"></span><span>My Account</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Est. 2016 · Independently tested</div>
+      <h1>Wellness, <em>traced</em><br>back to the source.</h1>
+      <p>Every supplement on HealthStore ships with its lab report attached. No proprietary blends, no guessing — just what's on the label.</p>
+      <div class="cta-row">
+        <button class="btn-primary">Shop the collection</button>
+        <span class="cta-note">4.8/5 from 12,400 customers</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="tag"><span>Batch report</span><span>#HS-0472</span></div>
+      <div class="lab-list">
+        <div class="lab-row"><span>Omega-3 (EPA/DHA)</span><b>1,200 mg</b></div>
+        <div class="lab-row"><span>Vitamin D3</span><b>2,000 IU</b></div>
+        <div class="lab-row"><span>Magnesium Glycinate</span><b>320 mg</b></div>
+        <div class="lab-row"><span>Purity screen</span><b>Passed</b></div>
+      </div>
+      <p class="hero-quote">"Verified by an independent lab before every restock — the same report ships with your order."</p>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="7" width="16" height="12" rx="1"/><path d="M17 10h3l3 3v4h-6z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+      <div><b>Free shipping</b><span>On orders over $45</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><b>24/7 support</b><span>Real people, real fast</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/></svg>
+      <div><b>Secure checkout</b><span>256-bit encryption</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div><b>Lab-verified</b><span>Every batch tested</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="eyebrow">Browse</div>
+        <h2>Shop by category</h2>
+      </div>
+      <a class="view-all">View all →</a>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card">
+        <span class="num">01</span>
+        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2h8M9 2v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V2"/></svg></div>
+        <h3>Vitamins</h3>
+        <p>C, D3, B-complex &amp; more</p>
+      </a>
+      <a class="cat-card">
+        <span class="num">02</span>
+        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-3 3-5 7-5 11a5 5 0 0 0 10 0c0-4-2-8-5-11Z"/></svg></div>
+        <h3>Herbal Supplements</h3>
+        <p>Ashwagandha, turmeric, ginseng</p>
+      </a>
+      <a class="cat-card">
+        <span class="num">03</span>
+        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 6.5 12 12l5.5-5.5M6.5 17.5 12 12l5.5 5.5"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Fitness &amp; Nutrition</h3>
+        <p>Protein, creatine, electrolytes</p>
+      </a>
+      <a class="cat-card">
+        <span class="num">04</span>
+        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M9 6h6l1 16H8L9 6Z"/></svg></div>
+        <h3>Personal Care</h3>
+        <p>Skin, sleep &amp; recovery</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="eyebrow">Most reordered</div>
+        <h2>Best sellers this month</h2>
+      </div>
+      <a class="view-all">View all →</a>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-thumb">
+          <span class="ribbon">Bestseller</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 3v3h6V3"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="sku">SKU · MTX-01</span>
+          <h3>Multivitamin Complex</h3>
+          <div class="stars">★★★★★</div>
+          <div class="price-row"><span class="price">$19.99</span><span class="price-old">$24.99</span></div>
+          <button class="btn-add">Add to cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 3v3h6V3"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="sku">SKU · PRO-14</span>
+          <h3>Organic Protein Powder</h3>
+          <div class="stars">★★★★☆</div>
+          <div class="price-row"><span class="price">$29.99</span></div>
+          <button class="btn-add">Add to cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-thumb">
+          <span class="ribbon">New</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c2 3 5 6 5 10a5 5 0 0 1-10 0c0-4 3-7 5-10Z"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="sku">SKU · OMG-03</span>
+          <h3>Fish Oil Omega-3</h3>
+          <div class="stars">★★★★★</div>
+          <div class="price-row"><span class="price">$15.99</span></div>
+          <button class="btn-add">Add to cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l-1 6a5 5 0 0 1-10 0L6 3Z"/><path d="M12 12v9"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="sku">SKU · DTX-07</span>
+          <h3>Detox Herbal Tea</h3>
+          <div class="stars">★★★★☆</div>
+          <div class="price-row"><span class="price">$12.99</span></div>
+          <button class="btn-add">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="split">
+      <div class="offer-card">
+        <div class="eyebrow">Limited time</div>
+        <h3>Up to 30% off immune boosters, this week only.</h3>
+        <p>Vitamin C, zinc and elderberry blends — formulated for the season ahead.</p>
+        <button class="btn-primary">Shop immune boosters</button>
+      </div>
+      <div class="side-stack">
+        <div class="review-card">
+          <h4>Customer reviews <span class="mono" style="font-size:11px; color:#9B927F;">4.8/5</span></h4>
+          <div class="review-stars">★★★★★</div>
+          <p>"The lab report inside the box actually matched the label — first supplement brand I've trusted enough to reorder."</p>
+          <div class="review-who">— Priya M., verified buyer</div>
+        </div>
+        <div class="tips-card">
+          <h4>Health tips &amp; articles</h4>
+          <div class="tips-list">
+            <a class="tip-row"><span><span class="n">01</span>10 habits for a healthier week</span> →</a>
+            <a class="tip-row"><span><span class="n">02</span>A beginner's guide to herbal supplements</span> →</a>
+            <a class="tip-row"><span><span class="n">03</span>Reading a supplement label, properly</span> →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo"><span class="mark">H</span>HealthStore</a>
+        <p>Independently tested vitamins, herbal supplements and personal care — sourced honestly, labeled accurately.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#">Vitamins</a></li>
+          <li><a href="#">Herbal Supplements</a></li>
+          <li><a href="#">Fitness &amp; Nutrition</a></li>
+          <li><a href="#">Personal Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Shipping &amp; returns</a></li>
+          <li><a href="#">Track order</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Lab reports</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HealthStore. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
